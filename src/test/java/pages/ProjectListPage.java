@@ -30,8 +30,8 @@ public class ProjectListPage extends BasePage {
     }
 
     public void validateProject(Project project) {
-        SEARCH_INPUT.setValue(project.getProjectName());
-        $(byXpath(String.format(locatorProjectName, project.getProjectName()))).shouldBe(Condition.visible);
+        SEARCH_INPUT.setValue(project.getTitle());
+        $(byXpath(String.format(locatorProjectName, project.getTitle()))).shouldBe(Condition.visible);
     }
 
     @Override
