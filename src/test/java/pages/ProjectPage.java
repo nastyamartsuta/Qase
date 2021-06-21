@@ -47,11 +47,11 @@ public class ProjectPage extends BasePage {
 
     @Step("Create new Project")
     public ProjectDetailsPage createProject(Project project) {
-        String projectAccessType = project.getProjectAccessType();
-        String membersAccess = project.getMembersAccess();
-        $("#inputTitle").sendKeys(project.getProjectName());
-        $("#inputCode").sendKeys(project.getProjectCode());
-        $("#inputDescription").sendKeys(project.getDescription());
+        String projectAccessType = project.getAccess();
+        String membersAccess = project.getGroup();
+        $(PROJECT_NAME_INPUT).sendKeys(project.getTitle());
+        $(PROJECT_CODE_INPUT).sendKeys(project.getCode());
+        $(DESCRIPTION_INPUT).sendKeys(project.getDescription());
 
         $(projectAccessType(projectAccessType)).click();
         if (!projectAccessType.equals("Public")) {
