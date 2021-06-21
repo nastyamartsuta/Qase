@@ -8,11 +8,15 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void login() {
+//        open("/login");
+//        $("#inputEmail").sendKeys(user);
+//        $("#inputPassword").sendKeys(password);
+//        $("#btnLogin").click();
+//        $("#user-menu").shouldBe(Condition.visible);
 
-        open("/login");
-        $("#inputEmail").sendKeys(user);
-        $("#inputPassword").sendKeys(password);
-        $("#btnLogin").click();
-        $("#user-menu").shouldBe(Condition.visible);
+        loginPage
+                .openPage()
+                .login(user, password)
+                .isPageOpened();
     }
 }
